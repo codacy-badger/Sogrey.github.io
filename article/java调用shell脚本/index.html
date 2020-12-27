@@ -15,16 +15,18 @@
 
 
 
-<meta name="description" content="必须努力，付出不亚于任何人的努力">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Sogrey">
-<meta property="og:url" content="https://sogrey.github.io/categories/开源协议/index.html">
+<meta name="description" content="需要bash环境下执行，Windows推荐安装Git For Windows（国内下载站），Linux下默认就是bash。 1234567891011121314151617181920212223242526272829String systemType = &quot;linux&quot;;//区分Linux和WindowsString tifShPath = &quot;F:/test.sh&quot;;// shell脚本St">
+<meta name="keywords" content="Java,shell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java调用shell脚本">
+<meta property="og:url" content="https://sogrey.github.io/article/java调用shell脚本/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="必须努力，付出不亚于任何人的努力">
+<meta property="og:description" content="需要bash环境下执行，Windows推荐安装Git For Windows（国内下载站），Linux下默认就是bash。 1234567891011121314151617181920212223242526272829String systemType = &quot;linux&quot;;//区分Linux和WindowsString tifShPath = &quot;F:/test.sh&quot;;// shell脚本St">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-12-27T15:43:13.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sogrey">
-<meta name="twitter:description" content="必须努力，付出不亚于任何人的努力">
+<meta name="twitter:title" content="java调用shell脚本">
+<meta name="twitter:description" content="需要bash环境下执行，Windows推荐安装Git For Windows（国内下载站），Linux下默认就是bash。 1234567891011121314151617181920212223242526272829String systemType = &quot;linux&quot;;//区分Linux和WindowsString tifShPath = &quot;F:/test.sh&quot;;// shell脚本St">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -56,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Category: 开源协议 | Sogrey</title>
+<title>java调用shell脚本 | Sogrey</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,10 +68,10 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
-        isCategory: true,
+        isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
         search: true
@@ -404,59 +406,192 @@
     </div>
     <link class="menu-list" tags="标签云" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-java调用shell脚本" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/article/一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL-之间的差别/" class="archive-article-date">
-      <time datetime="2019-01-07T04:12:44.000Z" itemprop="datePublished">01-07</time>
+    <div class="article-meta">
+      <a href="/article/java调用shell脚本/" class="article-date">
+      <time datetime="2020-12-28T09:12:48.000Z" itemprop="datePublished">2020-12-28</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/article/一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL-之间的差别/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      java调用shell脚本
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/开源协议/">开源协议</a>
+    <a class="article-category-link" href="/categories/Java/">Java</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/开源协议/">开源协议</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>需要bash环境下执行，Windows推荐安装Git For Windows（<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">国内下载站</a>），Linux下默认就是bash。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">String systemType = <span class="string">"linux"</span>;<span class="comment">//区分Linux和Windows</span></span><br><span class="line">String tifShPath = <span class="string">"F:/test.sh"</span>;<span class="comment">// shell脚本</span></span><br><span class="line">String cmd = <span class="string">""</span>;</span><br><span class="line"><span class="keyword">if</span> (systemType.equalsIgnoreCase(<span class="string">"linux"</span>)) &#123;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		Runtime.getRuntime().exec(<span class="string">"chmod 755 -R "</span> + tifShPath);<span class="comment">//获取可读可执行权限</span></span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	cmd = tifShPath;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;<span class="comment">// windows</span></span><br><span class="line">	cmd = <span class="string">"bash "</span> + tifShPath;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Process child = Runtime.getRuntime().exec(cmd);</span><br><span class="line">	InputStream in = child.getInputStream();</span><br><span class="line">	BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(in));</span><br><span class="line">	String line;</span><br><span class="line">	<span class="keyword">while</span> ((line = bufferedReader.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">		System.out.println(line);</span><br><span class="line">	&#125;</span><br><span class="line">	in.close();</span><br><span class="line">	child.waitFor();</span><br><span class="line">	<span class="keyword">if</span> (bufferedReader != <span class="keyword">null</span>) &#123;</span><br><span class="line">		bufferedReader.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">	System.out.println(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://blog.csdn.net/sayoko06/article/details/88797838" target="_blank" rel="noopener">java调用shell脚本及注意事项</a></li>
+<li><a href="https://blog.csdn.net/qq_39477018/article/details/88849003" target="_blank" rel="noopener">java调用shell文件、远程调用shell文件并且传入参数、.sh文件执行的几种方法</a></li>
+<li><a href="https://blog.csdn.net/dream_broken/article/details/54289008" target="_blank" rel="noopener">java调用shell脚本并传递参数</a></li>
+<li><a href="https://www.yuque.com/docs/share/86e3fa77-39f5-4362-b809-a3c161370bcc" target="_blank" rel="noopener">【大数据】Shell任务在Java中的执行</a></li>
+<li><a href="https://www.jianshu.com/p/10f4771909f9" target="_blank" rel="noopener">使用ProcessBuilder执行命令行操作</a></li>
+</ul>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/article/java调用shell脚本/">java调用shell脚本</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
+        <p><span>发布时间:</span>2020-12-28, 17:12:48</p>
+        <p><span>最后更新:</span>2020-12-27, 23:43:13</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/article/java调用shell脚本/" title="java调用shell脚本">https://sogrey.github.io/article/java调用shell脚本/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/java调用shell脚本/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/article/SpringBoot项目瘦身/">
+                    Spring Boot 项目瘦身
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+
 
     
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/article/SpringBoot项目瘦身/" title="下一篇: Spring Boot 项目瘦身">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/article/java调用shell脚本/">java调用shell脚本</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot项目瘦身/">Spring Boot 项目瘦身</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Springboot跨域请求/">Springboot跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot支持HTTPS/">SpringBoot支持HTTPS</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot实现定时任务/">SpringBoot实现定时任务</a></li><li class="post-list-item"><a class="post-list-link" href="/article/SpringBoot注解简介/">SpringBoot注解简介</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux下如何创建文件/">Linux下如何创建文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/【Linux】提示用户不在sudoers文件中的解决方法/">【Linux】提示用户不在sudoers文件中的解决方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Linux下安装软件/">Linux下安装软件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/spring-boot项目打包和自启动/">spring-boot项目打包和自启动</a></li><li class="post-list-item"><a class="post-list-link" href="/article/使用Maven搭建spring-boot项目（下）/">使用Maven搭建spring boot项目（下）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/使用Maven搭建spring-boot项目/">使用Maven搭建spring boot项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/解锁github高级搜索技能/">解锁github高级搜索技能</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何完全卸载AutoCAD/">如何完全卸载AutoCAD</a></li><li class="post-list-item"><a class="post-list-link" href="/article/专为编程而生的字体/">专为编程而生的字体 —— Fira Code</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Js之Promise/">Js之Promise</a></li><li class="post-list-item"><a class="post-list-link" href="/article/zj2019-zw2020/">总结2019，展望2020</a></li><li class="post-list-item"><a class="post-list-link" href="/article/使用hugo搭建个人博客/">使用hugo搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Studio开发组件化App遇到的问题/">Android Studio开发组件化App遇到的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/git-clone-解决Permission-Denied-publickey-问题/">git clone 解决Permission Denied (publickey)问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/node-js调试/">node.js调试</a></li><li class="post-list-item"><a class="post-list-link" href="/article/端口被占用-干掉它/">端口被占用，干掉它</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JS中apply-与call-的区别/">JS中apply()与call()的区别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/前端调试之把玩console/">前端调试之把玩console</a></li><li class="post-list-item"><a class="post-list-link" href="/article/you-get/">下载神器 you-get</a></li><li class="post-list-item"><a class="post-list-link" href="/article/“-诗歌-千古岐山/">[诗歌]千古岐山</a></li><li class="post-list-item"><a class="post-list-link" href="/article/使用-npm-安装-gitbook/">使用 npm 安装 gitbook</a></li><li class="post-list-item"><a class="post-list-link" href="/article/再见2018，你好2019/">再见2018，你好2019</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL-之间的差别/">一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Activity启动模式-lauchMode/">Activity启动模式(lauchMode)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java对象转json时空值-null-处理/">Java对象转json时空值(null)处理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android版本和API-Level对应关系/">Android版本和API Level对应关系</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Flutter 路由跳转/">Flutter 路由跳转</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android 动态调用外部jar&dex/">Android 动态调用外部jar/dex</a></li><li class="post-list-item"><a class="post-list-link" href="/article/JNI Md5加密生成so文件/">JNI Md5加密生成so文件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/PE装机，开机设置启动项快捷键/">pe装机，开机设置启动项快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/article/VS-code-插件/">VS code 插件</a></li><li class="post-list-item"><a class="post-list-link" href="/article/遍历Map的四种方法/">遍历Map的四种方法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/15种CSS居中方式/">15种CSS居中方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/利用百度URL-API实现地址-经纬度互相转换/">利用百度URL API实现地址与经纬度互相转换</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android获取view宽高的三种方式/">Android获取view宽高的三种方式</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-TextView属性android-ellipsize-marquee不生效的解决办法/">Android中TextView属性ellipsize=marquee不生效的解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/article/关于Android程序使用KSoap2调用Webservice运行不成功的问题/">关于Android程序使用KSoap2调用Webservice运行不成功的问题</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo-添加-Gitment-评论/">Hexo 添加 Gitment 评论</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-Webview-内容自适应高度/">Android Webview 内容自适应高度</a></li><li class="post-list-item"><a class="post-list-link" href="/article/java实现定时任务的三种方法/">java实现定时任务的三种方法(收集)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Java读取文件夹大小的6种方法（收集）/">Java读取文件夹大小的6种方法（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/json转树状结构（收集）/">json转树状结构（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/一行  JavaScript 代码（收集）/">一行  JavaScript 代码（收集）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo建站过程中遇到的问题（填坑）/">Hexo建站过程中遇到的问题（填坑篇）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android-library-发布到-JCenter/">Android library 发布到 JCenter</a></li><li class="post-list-item"><a class="post-list-link" href="/article/正则表达式匹配汇集/">正则表达式匹配汇集</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Html（CSS-JS）/">技术文章之Html（CSS，JS）</a></li><li class="post-list-item"><a class="post-list-link" href="/article/技术文章之Android/">技术文章之Android</a></li><li class="post-list-item"><a class="post-list-link" href="/article/web-app相关整理/">web app相关整理</a></li><li class="post-list-item"><a class="post-list-link" href="/article/微信小程序初印象【整理】/">微信小程序初印象【整理】</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Webp的探究之路/">Webp的探究之路</a></li><li class="post-list-item"><a class="post-list-link" href="/article/android中使用icon-fonts字体图标/">android中使用icon fonts字体图标</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（上）/">Android混淆签名(上)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Android混淆签名（下）/">Android混淆签名(下)</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我收集的一些开源项目/">我收集的一些开源项目</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Git常用命令/">Git常用命令</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加文章分类/">Hexo博客基于主题Yelee(yelog) 添加文章分类</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Hexo博客基于主题Yelee-yelog-添加“标签云”和“关于我”菜单项页面/">Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</a></li><li class="post-list-item"><a class="post-list-link" href="/article/Html5-PPT/">Html5 PPT</a></li><li class="post-list-item"><a class="post-list-link" href="/article/如何在Github-Pages搭建个人独立主页？/">如何在Github Pages搭建个人独立主页？</a></li><li class="post-list-item"><a class="post-list-link" href="/article/我是如何用hexo搭建github-pages/">我是如何用hexo搭建github pages</a></li><li class="post-list-item"><a class="post-list-link" href="/article/hello-world/">Hello World</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+
+
+<!--gitalk 评论-->
+
+    <div id="gitalk-container"></div>
+
+    <style>
+        #gitalk-container{
+            margin: 60px 0 0;padding: 0 60px;
+        }
+        #gitalk-container a {
+          border: none;
+        }
+		@media screen and (max-width:1040px) {
+            #gitalk-container{
+                padding: 0 30px;
+            }
+		}
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+    <script>
+    var gitalk = new Gitalk({        
+        id: 'java调用shell脚本',
+        title: 'java调用shell脚本',
+        owner: 'Sogrey',        
+        admin: ['Sogrey'],
+        repo: 'Sogrey.github.io',
+        clientID: '582650733e15427a208c',
+        clientSecret: 'bd0b0b80b6f23921f9b9df5ad0e40650e9da65f0',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+      
+      gitalk.render('gitalk-container')
+    </script>
+
+<!--gitalk 评论 end-->
+
 
 </div>
       <footer id="footer">
