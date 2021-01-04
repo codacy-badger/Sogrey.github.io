@@ -24,7 +24,7 @@
 <meta property="og:description" content="转载自：https://my.oschina.net/u/2930533/blog/759617">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://static.oschina.net/uploads/space/2016/1017/165317_6Tgq_2930533.png">
-<meta property="og:updated_time" content="2021-01-04T14:45:46.477Z">
+<meta property="og:updated_time" content="2021-01-04T14:47:47.409Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="AutoCAD_ID、指针、句柄和ads_name的区别">
 <meta name="twitter:description" content="转载自：https://my.oschina.net/u/2930533/blog/759617">
@@ -464,12 +464,12 @@
 </ol>
 <h2 id="ID、指针、句柄和-ads-name-之间具有下面的转换关系："><a href="#ID、指针、句柄和-ads-name-之间具有下面的转换关系：" class="headerlink" title="ID、指针、句柄和 ads_name 之间具有下面的转换关系："></a>ID、指针、句柄和 ads_name 之间具有下面的转换关系：</h2><ol>
 <li>从 AcDbObjectId 到AcDbObject对象:acdbOpenAcDbObject() 或者 acdbOpenObject() 。</li>
-<li>从AcDbObject对象到 AcDbObjectId ：所有的数据库常驻对象都继承自 AcDbObjectId 函数能获得所指向对象的 ID。</li>
-<li>从AcDbHandle到 AcDbObjectId ： AcDbDatabase::getAcDbObjectId();</li>
-<li>从 AcDbObjectId 到AcDbHandle：AcDbObjectId::handle() 。</li>
-<li>从AcDbObject到AcDbHandle：AcDbObject::getAcDbHandle().</li>
+<li>从 AcDbObject 对象到 AcDbObjectId ：所有的数据库常驻对象都继承自 AcDbObjectId 函数能获得所指向对象的 ID。</li>
+<li>从AcDbHandle 到 AcDbObjectId ： AcDbDatabase::getAcDbObjectId();</li>
+<li>从 AcDbObjectId 到AcDbHandle ：AcDbObjectId::handle() 。</li>
+<li>从 AcDbObject 到AcDbHandle ：AcDbObject::getAcDbHandle().</li>
 <li>从 ads_name 到 AcDbObjectId ：使用全局函数 acdbGetObjectId()。</li>
-<li>从 AcDbObjectId到 ads_name：使用全局函数 acdbGetAdsName()。</li>
+<li>从 AcDbObjectId 到 ads_name ：使用全局函数 acdbGetAdsName()。</li>
 </ol>
 
       
@@ -482,7 +482,7 @@
         <p><span>本文标题:</span><a href="/article/AutoCAD_ID__Handle__ads_name/">AutoCAD_ID、指针、句柄和ads_name的区别</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Sogrey</a></p>
         <p><span>发布时间:</span>2021-01-04, 22:30:10</p>
-        <p><span>最后更新:</span>2021-01-04, 22:45:46</p>
+        <p><span>最后更新:</span>2021-01-04, 22:47:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/article/AutoCAD_ID__Handle__ads_name/" title="AutoCAD_ID、指针、句柄和ads_name的区别">https://sogrey.github.io/article/AutoCAD_ID__Handle__ads_name/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/AutoCAD_ID__Handle__ads_name/　　作者: Sogrey" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
