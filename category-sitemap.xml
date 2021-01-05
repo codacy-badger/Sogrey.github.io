@@ -9,7 +9,7 @@
 
     <url>
         <loc>https://sogrey.github.io/categories/AutoCad/</loc>
-        <lastmod>2021-01-04T14:59:33.724Z</lastmod>
+        <lastmod>2021-01-05T12:37:36.707Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -71,13 +71,6 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
-        <lastmod>2020-12-21T15:42:58.224Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://sogrey.github.io/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
         <lastmod>2020-12-21T15:42:58.224Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -85,14 +78,21 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
-        <lastmod>2020-12-21T15:42:58.223Z</lastmod>
+        <loc>https://sogrey.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
+        <lastmod>2020-12-21T15:42:58.224Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://sogrey.github.io/categories/api/</loc>
+        <lastmod>2020-12-21T15:42:58.223Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/categories/%E5%89%8D%E7%AB%AF/</loc>
         <lastmod>2020-12-21T15:42:58.223Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -155,14 +155,14 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/you-get/</loc>
+        <loc>https://sogrey.github.io/categories/WebApp/</loc>
         <lastmod>2020-12-21T15:42:58.218Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/WebApp/</loc>
+        <loc>https://sogrey.github.io/categories/you-get/</loc>
         <lastmod>2020-12-21T15:42:58.218Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -183,14 +183,14 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Webp/</loc>
+        <loc>https://sogrey.github.io/categories/VS-code/</loc>
         <lastmod>2020-12-21T15:42:58.214Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/VS-code/</loc>
+        <loc>https://sogrey.github.io/categories/Webp/</loc>
         <lastmod>2020-12-21T15:42:58.214Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -218,14 +218,14 @@
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Html5/</loc>
+        <loc>https://sogrey.github.io/categories/Hexo%E5%BB%BA%E7%AB%99%E5%A1%AB%E5%9D%91/</loc>
         <lastmod>2020-12-21T15:42:58.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/categories/Hexo%E5%BB%BA%E7%AB%99%E5%A1%AB%E5%9D%91/</loc>
+        <loc>https://sogrey.github.io/categories/Html5/</loc>
         <lastmod>2020-12-21T15:42:58.210Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
