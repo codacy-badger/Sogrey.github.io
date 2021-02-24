@@ -24,7 +24,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://image-static.segmentfault.com/292/869/2928695017-5f20c43ed364c_articlex">
 <meta property="article:published_time" content="2021-02-24T15:33:53.000Z">
-<meta property="article:modified_time" content="2021-02-24T15:43:57.838Z">
+<meta property="article:modified_time" content="2021-02-24T15:52:50.483Z">
 <meta property="article:author" content="Sogrey">
 <meta property="article:tag" content="JS">
 <meta property="article:tag" content="Promise">
@@ -464,7 +464,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promises = [</span><br><span class="line">  delay(<span class="number">100</span>).then(<span class="function">() =&gt;</span> <span class="number">1</span>),</span><br><span class="line">  delay(<span class="number">200</span>).then(<span class="function">() =&gt;</span> <span class="number">2</span>),</span><br><span class="line">  <span class="built_in">Promise</span>.reject(<span class="number">3</span>)</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.allSettled(promises).then(<span class="function"><span class="params">values</span>=&gt;</span><span class="built_in">console</span>.log(values))</span><br><span class="line"><span class="comment">// 最终输出： </span></span><br><span class="line"><span class="comment">//    [</span></span><br><span class="line"><span class="comment">//      &#123;status: &quot;fulfilled&quot;, value: 1&#125;,</span></span><br><span class="line"><span class="comment">//      &#123;status: &quot;fulfilled&quot;, value: 2&#125;,</span></span><br><span class="line"><span class="comment">//      &#123;status: &quot;rejected&quot;, value: 3&#125;,</span></span><br><span class="line"><span class="comment">//    ]</span></span><br></pre></td></tr></table></figure>
 <p>可以看到所有promise的数据都被包含在then语句中，且每个promise的返回值多了一个status字段，表示当前promise的状态，没有任何一个promise的信息被丢失。</p>
 <p>因此，当用Promise.allSettled时，我们只需专注在then语句里，当有promise被异常打断时，我们依然能妥善处理那些已经成功了的promise，不必全部重来。</p>
-<h3 id="当前大环境对Promise-allSettled的支持"><a href="#当前大环境对Promise-allSettled的支持" class="headerlink" title="当前大环境对Promise.allSettled的支持"></a>当前大环境对Promise.allSettled的支持</h3><p>nodejs从<a target="_blank" rel="noopener" href="https://nodejs.org/en/blog/release/v12.9.0/">v12.9.0</a>开始加入了对Promise.allSettled的支持，主流浏览器们也各自在2019年发布的版本中支持了此方法，这意味着你已经可以放心大胆的使用了。</p>
+<h2 id="当前大环境对Promise-allSettled的支持"><a href="#当前大环境对Promise-allSettled的支持" class="headerlink" title="当前大环境对Promise.allSettled的支持"></a>当前大环境对Promise.allSettled的支持</h2><p>nodejs从<a target="_blank" rel="noopener" href="https://nodejs.org/en/blog/release/v12.9.0/">v12.9.0</a>开始加入了对Promise.allSettled的支持，主流浏览器们也各自在2019年发布的版本中支持了此方法，这意味着你已经可以放心大胆的使用了。</p>
 <p><img src="https://image-static.segmentfault.com/292/869/2928695017-5f20c43ed364c_articlex" alt="promise-allsettled.png"></p>
 <p>对于那些不支持此方法的环境，你可以直接引用开源社区中实现了此方法的npm包：</p>
 <ul>
@@ -487,7 +487,7 @@
         <p><span>本文标题:</span><a href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/">Promise.all和Promise.allSettled的区别</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
         <p><span>发布时间:</span>2021-02-24, 23:33:53</p>
-        <p><span>最后更新:</span>2021-02-24, 23:43:57</p>
+        <p><span>最后更新:</span>2021-02-24, 23:52:50</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Promise.all和Promise.allSettled的区别">https://sogrey.github.io/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/</a>
             <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -517,7 +517,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3Promise-all%E7%9A%84%E7%97%9B%E7%82%B9"><span class="toc-text">解决Promise.all的痛点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E5%A4%A7%E7%8E%AF%E5%A2%83%E5%AF%B9Promise-allSettled%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-text">当前大环境对Promise.allSettled的支持</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3Promise-all%E7%9A%84%E7%97%9B%E7%82%B9"><span class="toc-text">解决Promise.all的痛点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E5%A4%A7%E7%8E%AF%E5%A2%83%E5%AF%B9Promise-allSettled%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-text">当前大环境对Promise.allSettled的支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol>
         
     </div>
     <style>
