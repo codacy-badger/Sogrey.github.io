@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/categories/Linux/</loc>
+        <lastmod>2021-03-04T13:00:43.451Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/categories/JS/</loc>
         <lastmod>2021-03-03T17:16:01.922Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -143,13 +150,6 @@
     <url>
         <loc>https://sogrey.github.io/categories/JavaScript/</loc>
         <lastmod>2020-12-21T15:42:58.220Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/categories/Linux/</loc>
-        <lastmod>2020-12-21T15:42:58.219Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
