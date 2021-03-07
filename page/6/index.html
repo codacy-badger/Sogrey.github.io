@@ -410,6 +410,85 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-java实现定时任务的三种方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/" class="article-date">
+      <time datetime="2018-01-03T06:08:44.000Z" itemprop="datePublished">2018-01-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/">java实现定时任务的三种方法(收集)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <ul>
+<li>普通thread </li>
+</ul>
+<p>这是最常见的，创建一个thread，然后让它在while循环里一直运行着，通过sleep方法来达到定时任务的效果。这样可以快速简单的实现，代码如下： </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.sogrey.task;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TaskRunnable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * <span class="doctag">@param</span> args</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// run in a second  </span></span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">long</span> timeInterval = <span class="number">1000</span>;  </span><br><span class="line">        Runnable runnable = <span class="keyword">new</span> Runnable() &#123;  </span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;  </span><br><span class="line">                <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;  </span><br><span class="line">                    <span class="comment">// ------- code for task to run  </span></span><br><span class="line">                    System.out.println(<span class="string">&quot;Hello !!&quot;</span>);  </span><br><span class="line">                    <span class="comment">// ------- ends here  </span></span><br><span class="line">                    <span class="keyword">try</span> &#123;  </span><br><span class="line">                        Thread.sleep(timeInterval);  </span><br><span class="line">                    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;  </span><br><span class="line">                        e.printStackTrace();  </span><br><span class="line">                    &#125;  </span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;;  </span><br><span class="line">        Thread thread = <span class="keyword">new</span> Thread(runnable);  </span><br><span class="line">        thread.start();  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/" rel="tag">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/#more">阅读全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitalk 评论-->
+
+<!--gitalk 评论 end-->
+
+
+
+  
     <article id="post-Java读取文件夹大小的6种方法（收集）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1110,90 +1189,6 @@
       
         <p class="article-more-link">
           <a href="/article/web-app%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitalk 评论-->
-
-<!--gitalk 评论 end-->
-
-
-
-  
-    <article id="post-微信小程序初印象【整理】" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/" class="article-date">
-      <time datetime="2017-01-18T14:19:46.000Z" itemprop="datePublished">2017-01-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/">微信小程序初印象【整理】</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="微信小程序是什么"><a href="#微信小程序是什么" class="headerlink" title="微信小程序是什么"></a>微信小程序是什么</h1><p>『微信小程序』是微信即公众号之后推出的一项服务。</p>
-<blockquote>
-<p>我们提供了一种新的开放能力，开发者可以快速地开发一个小程序。小程序可以在微信内被便捷地获取和传播，同时具有出色的使用体验。    </p>
-<p>—— 微信内测界面</p>
-</blockquote>
-<p>核心理念：</p>
-<blockquote>
-<p>小程序是一种不需要下载安装即可使用的应用，它实现了应用『触手可及』的梦想，用户扫一扫或搜一搜即可打开应用。也体现了『用完即走』的理念，用户不关心是否安装太多应用的问题。应用将无处不在，随时可用，但又无需安装卸载。    </p>
-<p>—— 张小龙</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PPT/" rel="tag">PPT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="tag">微信小程序</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%89%8B%E8%AE%B0/" rel="tag">手记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/#more">阅读全文 >></a>
         </p>
       
       <div class="clearfix"></div>

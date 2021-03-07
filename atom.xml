@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sogrey.github.io/"/>
-  <updated>2021-03-05T16:04:17.155Z</updated>
+  <updated>2021-03-07T04:18:36.545Z</updated>
   <id>https://sogrey.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux中让shell脚本变成可执行文件</title>
+    <link href="https://sogrey.github.io/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
+    <id>https://sogrey.github.io/article/Linux中让shell脚本变成可执行文件/</id>
+    <published>2021-03-06T16:36:36.000Z</published>
+    <updated>2021-03-07T04:18:36.545Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>如何创建Linux脚本，在Linux中创建脚本如何运行？</p><span id="more"></span><p>先创建一个脚本文件<code>run.sh</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch run.sh</span><br></pre></td></tr></table></figure><br>输入内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author : Sogrey</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;What&#x27;s your name?&quot;</span></span><br><span class="line"><span class="built_in">read</span> PERSON</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello, <span class="variable">$PERSON</span>&quot;</span></span><br></pre></td></tr></table></figure></p><h2 id="sh-bash执行Bash脚本"><a href="#sh-bash执行Bash脚本" class="headerlink" title="sh/bash执行Bash脚本"></a>sh/bash执行Bash脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ sh run.sh</span><br><span class="line">What<span class="string">&#x27;s your name?</span></span><br><span class="line"><span class="string">Sogrey</span></span><br><span class="line"><span class="string">Hello, Sogrey</span></span><br><span class="line"><span class="string">[sogrey@bogon 文档]$ bash run.sh</span></span><br><span class="line"><span class="string">What&#x27;</span>s your name?</span><br><span class="line">Sogrey</span><br><span class="line">Hello, Sogrey</span><br></pre></td></tr></table></figure><h2 id="chmod命令设置可执行权限"><a href="#chmod命令设置可执行权限" class="headerlink" title="chmod命令设置可执行权限"></a>chmod命令设置可执行权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ chmod +x ./run.sh</span><br><span class="line">[sogrey@bogon 文档]$ ll</span><br><span class="line">总用量 28</span><br><span class="line">-rwx------. 1 sogrey sogrey   90 3月   7 12:02 run.sh</span><br><span class="line">[sogrey@bogon 文档]$ ./run.sh</span><br><span class="line">What<span class="string">&#x27;s your name?</span></span><br><span class="line"><span class="string">Sogrey</span></span><br><span class="line"><span class="string">Hello, Sogrey</span></span><br><span class="line"><span class="string">[sogrey@bogon 文档]$ </span></span><br></pre></td></tr></table></figure><h2 id="shc打包二进制文件"><a href="#shc打包二进制文件" class="headerlink" title="shc打包二进制文件"></a>shc打包二进制文件</h2><h3 id="gzexe加密"><a href="#gzexe加密" class="headerlink" title="gzexe加密"></a>gzexe加密</h3><p>gzexe命令即可隐藏shell源码，这个命令是系统自带的gzexe程序。在运用中， gzexe  script.sh会把原来没有加密的文件备份为 script.sh~ ,同时 script.sh 即被变成加密文件。 gzexe  -d script.sh会解密还原脚本，所以只能够满足一般的加密用途。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ gzexe run.sh <span class="comment"># 加密</span></span><br><span class="line">run.sh:  7.8%</span><br><span class="line">[sogrey@bogon 文档]$ gzexe -d run.sh <span class="comment"># 解密</span></span><br><span class="line">[sogrey@bogon 文档]$ </span><br></pre></td></tr></table></figure><h3 id="shc打包二进制文件-1"><a href="#shc打包二进制文件-1" class="headerlink" title="shc打包二进制文件"></a>shc打包二进制文件</h3><p>在源中搜索软件：<code>apt-cache search shc</code>，显示shc为Shell script compiler，然后安装 <code>apt-get install shc</code> ，安装后程序放置于/usr/bin/shc。</p><p>shc把shell脚本封装为一个可执行的二进制文件，<code>shc -h</code>查看使用方法。</p><p><code>shc -v -r -f run.sh</code> 打包成<code>run.sh.x</code>二进制文件，同时生成<code>run.sh.x.c</code>文件，这个为C语言文件。猜想这个工具是将shell脚本转为C语言，然后在打包成二进制文件。</p><p>如果打包不成功的话，<code>shc -h</code>最下面有environment环境要求，要在保证满足。</p><h3 id="shc的反编译UnSHc"><a href="#shc的反编译UnSHc" class="headerlink" title="shc的反编译UnSHc"></a>shc的反编译UnSHc</h3><p>github上克隆：<code>git clone https://github.com/yanncam/UnSHc.git</code>，文件夹lastest中有个脚本<code>unshc.sh</code>可以完成反编译功能。</p><p><code>./unshc.sh -h</code>查看使用方法，笔者使用sample里面的例程测试可以。但是笔者觉得这个工具意义不大，除非知道二级制文件是使用shc来编译的，不然反编译出来也不成功。反编译UnSHc对于开发人员来说作用不大。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://www.jianshu.com/p/69ce43a5c355">如何让shell脚本变成可执行文件</a></li><li><a href="https://www.jianshu.com/p/fae2e9b1d1f6">Linux中将shell脚本打包为可执行文件</a></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何创建Linux脚本，在Linux中创建脚本如何运行？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="https://sogrey.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="https://sogrey.github.io/tags/Linux/"/>
+    
+      <category term="shell" scheme="https://sogrey.github.io/tags/shell/"/>
+    
+      <category term="CentOS" scheme="https://sogrey.github.io/tags/CentOS/"/>
+    
+  </entry>
   
   <entry>
     <title>CentOS安装.netcore</title>
@@ -513,38 +539,6 @@
     
     
       <category term="字体" scheme="https://sogrey.github.io/tags/%E5%AD%97%E4%BD%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Js之Promise</title>
-    <link href="https://sogrey.github.io/article/Js%E4%B9%8BPromise/"/>
-    <id>https://sogrey.github.io/article/Js之Promise/</id>
-    <published>2020-04-28T02:14:21.000Z</published>
-    <updated>2020-12-21T15:42:58.212Z</updated>
-    
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="promise是什么？"><a href="#promise是什么？" class="headerlink" title="promise是什么？"></a>promise是什么？</h2><ul><li>promise是一个对象，对象和函数的区别就是对象可以保存状态，有3个状态分别是：等待态（默认） 成功态 失败态，函数不可以（闭包除外）</li><li>并未剥夺函数return的能力，因此无需层层传递callback，进行回调获取数据</li><li>代码风格，容易理解，便于维护</li><li>多个异步等待合并便于解决</li></ul><p>ES6 原生提供了 Promise 对象。</p><span id="more"></span><h2 id="promise-之前如何异步操作"><a href="#promise-之前如何异步操作" class="headerlink" title="promise 之前如何异步操作"></a>promise 之前如何异步操作</h2><h3 id="1-事件监听"><a href="#1-事件监听" class="headerlink" title="1. 事件监听"></a>1. 事件监听</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">&#x27;#start&#x27;</span>).addEventListener(<span class="string">&#x27;click&#x27;</span>, start, <span class="literal">false</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">start</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 响应事件，进行相应的操作</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// jquery on 监听</span></span><br><span class="line">$(<span class="string">&#x27;#start&#x27;</span>).on(<span class="string">&#x27;click&#x27;</span>, start)</span><br></pre></td></tr></table></figure><h3 id="2-回调"><a href="#2-回调" class="headerlink" title="2. 回调"></a>2. 回调</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 比较常见的有ajax</span></span><br><span class="line">$.ajax(<span class="string">&#x27;http://www.wysite.com/&#x27;</span>, &#123;</span><br><span class="line"> success (res) &#123;</span><br><span class="line">   <span class="comment">// 这里可以监听res返回的数据做回调逻辑的处理</span></span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者在页面加载完毕后回调</span></span><br><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"> <span class="comment">// 页面结构加载完成，做回调逻辑处理</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p><strong>异步回调的问题</strong>：</p><ul><li>之前处理异步是通过纯粹的回调函数的形式进行处理</li><li>很容易进入到回调地狱中，剥夺了函数return的能力</li><li>问题可以解决，但是难以读懂，维护困难</li><li>稍有不慎就会踏入回调地狱 - 嵌套层次深，不好维护</li></ul><h2 id="promise-如何异步操作"><a href="#promise-如何异步操作" class="headerlink" title="promise 如何异步操作"></a>promise 如何异步操作</h2><blockquote><p>使用回调函数存在的问题在于他剥夺了我们使用 <code>return</code> 和 <code>throw</code> 这些关键字的能力。而 Promise 很好地解决了这一切。</p></blockquote><p>每个promise实例都有一个<code>.then</code>方法。<code>resolve</code>（成功）,<code>reject</code>（失败）。<br><code>resolve</code>,<code>reject</code>是自己定义的，你需要他成功或者失败，要先调用的是谁？一旦成功了就不能失败；如果你手动抛出一个异常那就注定会进失败的结果了；</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>  promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>) =&gt;</span> &#123;</span><br><span class="line">   <span class="comment">//耗时异步操作</span></span><br><span class="line">   resolve(<span class="string">&#x27;成功&#x27;</span>); reject(<span class="string">&#x27;失败&#x27;</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span>&#123;    <span class="comment">//成功</span></span><br><span class="line">    <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;,<span class="function"><span class="params">err</span> =&gt;</span>&#123;   <span class="comment">//失败</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;err&#x27;</span>,err)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//成功</span></span><br></pre></td></tr></table></figure><p>其中：</p><ol><li><p>resolve作用是，将Promise对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject作用是，将Promise对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p></li><li><p>promise有三个状态：<br>   1、pending[待定]初始状态<br>   2、fulfilled[实现]操作成功<br>   3、rejected[被否决]操作失败<br>   当promise状态发生改变，就会触发then()里的响应函数处理后续步骤；<br>   promise状态一经改变，不会再变。</p></li><li><p>Promise对象的状态改变，只有两种可能：<br>   从pending变为fulfilled<br>   从pending变为rejected。<br>   这两种情况只要发生，状态就凝固了，不会再变了。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p></li></ol><h2 id="promise-api"><a href="#promise-api" class="headerlink" title="promise api"></a>promise api</h2><ul><li><p>romise.resolve()</p></li><li><p>Promise.reject()</p></li><li><p>Promise.prototype.then()</p></li><li><p>Promise.prototype.catch()</p></li><li><p>Promise.all() // 所有的完成</p></li></ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> p = <span class="built_in">Promise</span>.all([p1,p2,p3]);</span><br></pre></td></tr></table></figure><ul><li>Promise.race() // 竞速，完成一个即可</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise"><strong>Promise</strong> - JavaScript | MDN</a></li><li><a href="https://www.jianshu.com/p/063f7e490e9a">Javascript 中的神器——Promise</a></li><li><a href="https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544">Promise @廖雪峰</a></li><li><a href="https://www.jianshu.com/p/1b63a13c2701">promise @王云飞_小四_wyunfei</a></li><li><a href="https://blog.csdn.net/qq_34645412/article/details/81170576">ES6 Promise用法小结</a></li><li><a href="https://zhuanlan.zhihu.com/p/146895201">从0到1掌握Promise</a></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;promise是什么？&quot;&gt;&lt;a href=&quot;#promise是什么？&quot; class=&quot;headerlink&quot; title=&quot;promise是什么？&quot;&gt;&lt;/a&gt;promise是什么？&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;promise是一个对象，对象和函数的区别就是对象可以保存状态，有3个状态分别是：等待态（默认） 成功态 失败态，函数不可以（闭包除外）&lt;/li&gt;
-&lt;li&gt;并未剥夺函数return的能力，因此无需层层传递callback，进行回调获取数据&lt;/li&gt;
-&lt;li&gt;代码风格，容易理解，便于维护&lt;/li&gt;
-&lt;li&gt;多个异步等待合并便于解决&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;ES6 原生提供了 Promise 对象。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="https://sogrey.github.io/categories/JavaScript/"/>
-    
-    
-      <category term="JS" scheme="https://sogrey.github.io/tags/JS/"/>
-    
-      <category term="JavaScript" scheme="https://sogrey.github.io/tags/JavaScript/"/>
-    
-      <category term="Promise" scheme="https://sogrey.github.io/tags/Promise/"/>
     
   </entry>
   

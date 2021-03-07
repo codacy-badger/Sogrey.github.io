@@ -3,21 +3,28 @@
 
 
     <url>
-        <loc>https://sogrey.github.io/tags/netcore/</loc>
-        <lastmod>2021-03-05T16:04:17.155Z</lastmod>
+        <loc>https://sogrey.github.io/tags/CentOS/</loc>
+        <lastmod>2021-03-07T04:18:36.545Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://sogrey.github.io/tags/CentOS/</loc>
-        <lastmod>2021-03-05T16:04:17.155Z</lastmod>
+        <loc>https://sogrey.github.io/tags/shell/</loc>
+        <lastmod>2021-03-07T04:18:36.545Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://sogrey.github.io/tags/Linux/</loc>
+        <lastmod>2021-03-07T04:18:36.545Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/netcore/</loc>
         <lastmod>2021-03-05T16:04:17.155Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -47,13 +54,6 @@
     <url>
         <loc>https://sogrey.github.io/tags/Cad/</loc>
         <lastmod>2021-01-05T12:37:36.707Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/shell/</loc>
-        <lastmod>2020-12-27T15:43:13.016Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

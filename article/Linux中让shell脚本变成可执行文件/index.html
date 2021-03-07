@@ -15,18 +15,19 @@
 
 
 
-<meta name="description" content="在windows 上： 1 安装 从https:&#x2F;&#x2F;github.com&#x2F;soimort&#x2F;you-get&#x2F;releases&#x2F;latest下载，解压后在cmd中切换至目录下执行you-get即可  安装python,执行  123$ pip3 install you-get #安装$ pip3 install --upgrade you-get #更新$ pip3 install --upgrade">
+<meta name="description" content="如何创建Linux脚本，在Linux中创建脚本如何运行？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="下载神器 you-get">
-<meta property="og:url" content="https://sogrey.github.io/article/you-get/index.html">
+<meta property="og:title" content="Linux中让shell脚本变成可执行文件">
+<meta property="og:url" content="https://sogrey.github.io/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Sogrey">
-<meta property="og:description" content="在windows 上： 1 安装 从https:&#x2F;&#x2F;github.com&#x2F;soimort&#x2F;you-get&#x2F;releases&#x2F;latest下载，解压后在cmd中切换至目录下执行you-get即可  安装python,执行  123$ pip3 install you-get #安装$ pip3 install --upgrade you-get #更新$ pip3 install --upgrade">
+<meta property="og:description" content="如何创建Linux脚本，在Linux中创建脚本如何运行？">
 <meta property="og:locale">
-<meta property="article:published_time" content="2019-03-14T06:44:22.000Z">
-<meta property="article:modified_time" content="2020-12-21T15:42:58.218Z">
+<meta property="article:published_time" content="2021-03-06T16:36:36.000Z">
+<meta property="article:modified_time" content="2021-03-07T04:18:36.545Z">
 <meta property="article:author" content="Sogrey">
-<meta property="article:tag" content="you-get">
-<meta property="article:tag" content="下载">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="CentOS">
 <meta name="twitter:card" content="summary">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -61,7 +62,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>下载神器 you-get | Sogrey</title>
+<title>Linux中让shell脚本变成可执行文件 | Sogrey</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -405,11 +406,11 @@
     </div>
     <link class="menu-list" tags="标签云" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="post-you-get" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Linux中让shell脚本变成可执行文件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/article/you-get/" class="article-date">
-      <time datetime="2019-03-14T06:44:22.000Z" itemprop="datePublished">2019-03-14</time>
+      <a href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/" class="article-date">
+      <time datetime="2021-03-06T16:36:36.000Z" itemprop="datePublished">2021-03-07</time>
 </a>
 
 
@@ -424,7 +425,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      下载神器 you-get
+      Linux中让shell脚本变成可执行文件
     </h1>
   
 
@@ -433,13 +434,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/you-get/">you-get</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/you-get/" rel="tag">you-get</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E4%B8%8B%E8%BD%BD/" rel="tag">下载</a></li></ul>
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CentOS/" rel="tag">CentOS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/" rel="tag">shell</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -449,24 +450,23 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>在windows 上：</p>
-<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1 安装"></a>1 安装</h2><ol>
-<li><p>从<a target="_blank" rel="noopener" href="https://github.com/soimort/you-get/releases/latest">https://github.com/soimort/you-get/releases/latest</a>下载，解压后在cmd中切换至目录下执行you-get即可</p>
-</li>
-<li><p>安装python,执行 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install you-get <span class="comment">#安装</span></span><br><span class="line">$ pip3 install --upgrade you-get <span class="comment">#更新</span></span><br><span class="line">$ pip3 install --upgrade git+https://github.com/soimort/you-get@develop <span class="comment">#更新</span></span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://you-get.org/">https://you-get.org/ </a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/soimort/you-get">github</a></p>
-<p><div class="github-widget" data-repo="soimort/you-get"></div></p>
-<script type="text/javascript" src="https://git.hust.cc/GitHub-Repo-Widget.js/GithubRepoWidget.js"></script>
-
-<p>下载ffmpeg从<a target="_blank" rel="noopener" href="http://www.ffmpeg.org/">ffmpeg.org</a>并添加到PATH </p>
-</li>
-<li><p>即可在任意目录下使用you-get </p>
-</li>
-</ol>
-<h2 id="2-用法"><a href="#2-用法" class="headerlink" title="2 用法"></a>2 用法</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Usage: you-get [OPTION]... [URL]...</span><br><span class="line"></span><br><span class="line">Startup options:</span><br><span class="line">    -V | --version                      版本信息</span><br><span class="line">    -h | --<span class="built_in">help</span>                         帮助</span><br><span class="line">    </span><br><span class="line">Dry-run options: (no actual downloading)</span><br><span class="line">    -i | --info                         列出所有可获取的视频信息</span><br><span class="line">    -u | --url                          打印URLs的提取出信息，真实链接地址</span><br><span class="line">         --json                         打印URLs的JSON格式</span><br><span class="line">    </span><br><span class="line">Download options:</span><br><span class="line">    -n | --no-merge                     不合并分片</span><br><span class="line">         --no-caption                   不下载其他文件（字幕，歌词，弹幕。。。）</span><br><span class="line">    -f | --force                        覆盖存在的文件</span><br><span class="line">    -F | --format &lt;STREAM_ID&gt;           选择下载那种清晰度的视频</span><br><span class="line">    -O | --output-filename &lt;FILE&gt;       设置输出文件名</span><br><span class="line">    -o | --output-dir &lt;PATH&gt;            输出文件夹（相对位置可用，如：~/video/）</span><br><span class="line">    -p | --player &lt;PLAYER [OPTIONS]&gt;    将提取出的真实地址传给播放器</span><br><span class="line">    -c | --cookies &lt;COOKIES_FILE&gt;       导入cookies.txt或cookies.sqlite（firefox下使用export-cookies插件）</span><br><span class="line">    -x | --http-proxy &lt;HOST:PORT&gt;       使用HTTP代理下载</span><br><span class="line">    -y | --extractor-proxy &lt;HOST:PORT&gt;  仅对真实地址视频文件的下载使用HTTP代理</span><br><span class="line">         --no-proxy                     不使用代理</span><br><span class="line">    -s | --socks-proxy &lt;HOST:PORT&gt;      使用SOCKS5协议代理</span><br><span class="line">    -t | --timeout &lt;SECONDS&gt;            设置代理的timeout</span><br><span class="line">    -d | --debug                        显示traceback和其他的debug信息</span><br><span class="line">    -I | --input-file                   仅下载链接的视频不下载列表</span><br></pre></td></tr></table></figure>
-<h2 id="3-注意"><a href="#3-注意" class="headerlink" title="3 注意"></a>3 注意</h2><p>默认情况下，下载最高清晰度视频<br>输入任意内容如：you-get “i love china” 可以从Google内搜索并下载视频，youtube-dl也有类似功能<br>bug地址：<a target="_blank" rel="noopener" href="https://github.com/soimort/you-get/issues">https://github.com/soimort/you-get/issues</a><br>-c和-p参数非常好用</p>
+        <p>如何创建Linux脚本，在Linux中创建脚本如何运行？</p>
+<span id="more"></span>
+<p>先创建一个脚本文件<code>run.sh</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch run.sh</span><br></pre></td></tr></table></figure><br>输入内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># Author : Sogrey</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;What&#x27;s your name?&quot;</span></span><br><span class="line"><span class="built_in">read</span> PERSON</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Hello, <span class="variable">$PERSON</span>&quot;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="sh-bash执行Bash脚本"><a href="#sh-bash执行Bash脚本" class="headerlink" title="sh/bash执行Bash脚本"></a>sh/bash执行Bash脚本</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ sh run.sh</span><br><span class="line">What<span class="string">&#x27;s your name?</span></span><br><span class="line"><span class="string">Sogrey</span></span><br><span class="line"><span class="string">Hello, Sogrey</span></span><br><span class="line"><span class="string">[sogrey@bogon 文档]$ bash run.sh</span></span><br><span class="line"><span class="string">What&#x27;</span>s your name?</span><br><span class="line">Sogrey</span><br><span class="line">Hello, Sogrey</span><br></pre></td></tr></table></figure>
+<h2 id="chmod命令设置可执行权限"><a href="#chmod命令设置可执行权限" class="headerlink" title="chmod命令设置可执行权限"></a>chmod命令设置可执行权限</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ chmod +x ./run.sh</span><br><span class="line">[sogrey@bogon 文档]$ ll</span><br><span class="line">总用量 28</span><br><span class="line">-rwx------. 1 sogrey sogrey   90 3月   7 12:02 run.sh</span><br><span class="line">[sogrey@bogon 文档]$ ./run.sh</span><br><span class="line">What<span class="string">&#x27;s your name?</span></span><br><span class="line"><span class="string">Sogrey</span></span><br><span class="line"><span class="string">Hello, Sogrey</span></span><br><span class="line"><span class="string">[sogrey@bogon 文档]$ </span></span><br></pre></td></tr></table></figure>
+<h2 id="shc打包二进制文件"><a href="#shc打包二进制文件" class="headerlink" title="shc打包二进制文件"></a>shc打包二进制文件</h2><h3 id="gzexe加密"><a href="#gzexe加密" class="headerlink" title="gzexe加密"></a>gzexe加密</h3><p>gzexe命令即可隐藏shell源码，这个命令是系统自带的gzexe程序。在运用中， gzexe  script.sh会把原来没有加密的文件备份为 script.sh~ ,同时 script.sh 即被变成加密文件。 gzexe  -d script.sh会解密还原脚本，所以只能够满足一般的加密用途。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[sogrey@bogon 文档]$ gzexe run.sh <span class="comment"># 加密</span></span><br><span class="line">run.sh:	  7.8%</span><br><span class="line">[sogrey@bogon 文档]$ gzexe -d run.sh <span class="comment"># 解密</span></span><br><span class="line">[sogrey@bogon 文档]$ </span><br></pre></td></tr></table></figure>
+<h3 id="shc打包二进制文件-1"><a href="#shc打包二进制文件-1" class="headerlink" title="shc打包二进制文件"></a>shc打包二进制文件</h3><p>在源中搜索软件：<code>apt-cache search shc</code>，显示shc为Shell script compiler，然后安装 <code>apt-get install shc</code> ，安装后程序放置于/usr/bin/shc。</p>
+<p>shc把shell脚本封装为一个可执行的二进制文件，<code>shc -h</code>查看使用方法。</p>
+<p><code>shc -v -r -f run.sh</code> 打包成<code>run.sh.x</code>二进制文件，同时生成<code>run.sh.x.c</code>文件，这个为C语言文件。猜想这个工具是将shell脚本转为C语言，然后在打包成二进制文件。</p>
+<p>如果打包不成功的话，<code>shc -h</code>最下面有environment环境要求，要在保证满足。</p>
+<h3 id="shc的反编译UnSHc"><a href="#shc的反编译UnSHc" class="headerlink" title="shc的反编译UnSHc"></a>shc的反编译UnSHc</h3><p>github上克隆：<code>git clone https://github.com/yanncam/UnSHc.git</code>，文件夹lastest中有个脚本<code>unshc.sh</code>可以完成反编译功能。</p>
+<p><code>./unshc.sh -h</code>查看使用方法，笔者使用sample里面的例程测试可以。但是笔者觉得这个工具意义不大，除非知道二级制文件是使用shc来编译的，不然反编译出来也不成功。反编译UnSHc对于开发人员来说作用不大。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/69ce43a5c355">如何让shell脚本变成可执行文件</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fae2e9b1d1f6">Linux中将shell脚本打包为可执行文件</a></li>
+</ul>
 
       
     </div>
@@ -475,13 +475,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/article/you-get/">下载神器 you-get</a></p>
+        <p><span>本文标题:</span><a href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/">Linux中让shell脚本变成可执行文件</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页"></a></p>
-        <p><span>发布时间:</span>2019-03-14, 14:44:22</p>
-        <p><span>最后更新:</span>2020-12-21, 23:42:58</p>
+        <p><span>发布时间:</span>2021-03-07, 00:36:36</p>
+        <p><span>最后更新:</span>2021-03-07, 12:18:36</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/article/you-get/" title="下载神器 you-get">https://sogrey.github.io/article/you-get/</a>
-            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/you-get/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/" title="Linux中让shell脚本变成可执行文件">https://sogrey.github.io/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://sogrey.github.io/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/　　作者: " title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -493,16 +493,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/">
-                    前端调试之把玩console
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/">
-                    [诗歌]千古岐山
+                <a href="/article/CentOS%E5%AE%89%E8%A3%85-netcore/">
+                    CentOS安装.netcore
                 </a>
             </div>
         
@@ -514,7 +508,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AE%89%E8%A3%85"><span class="toc-text">1 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%94%A8%E6%B3%95"><span class="toc-text">2 用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B3%A8%E6%84%8F"><span class="toc-text">3 注意</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#sh-bash%E6%89%A7%E8%A1%8CBash%E8%84%9A%E6%9C%AC"><span class="toc-text">sh&#x2F;bash执行Bash脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chmod%E5%91%BD%E4%BB%A4%E8%AE%BE%E7%BD%AE%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%9D%83%E9%99%90"><span class="toc-text">chmod命令设置可执行权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#shc%E6%89%93%E5%8C%85%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-text">shc打包二进制文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gzexe%E5%8A%A0%E5%AF%86"><span class="toc-text">gzexe加密</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shc%E6%89%93%E5%8C%85%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6-1"><span class="toc-text">shc打包二进制文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shc%E7%9A%84%E5%8F%8D%E7%BC%96%E8%AF%91UnSHc"><span class="toc-text">shc的反编译UnSHc</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
         
     </div>
     <style>
@@ -545,15 +539,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/" title="上一篇: 前端调试之把玩console">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/" title="下一篇: [诗歌]千古岐山">
+            <a href="/article/CentOS%E5%AE%89%E8%A3%85-netcore/" title="下一篇: CentOS安装.netcore">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -592,8 +584,8 @@
 
     <script>
     var gitalk = new Gitalk({        
-        id: '下载神器 you-get',
-        title: '下载神器 you-get',
+        id: 'Linux中让shell脚本变成可执行文件',
+        title: 'Linux中让shell脚本变成可执行文件',
         owner: 'Sogrey',        
         admin: ['Sogrey'],
         repo: 'Sogrey.github.io',
