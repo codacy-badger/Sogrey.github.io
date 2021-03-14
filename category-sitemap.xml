@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/categories/HEXO%25E5%258D%259A%25E5%25AE%25A2/</loc>
+        <lastmod>2021-03-14T12:48:13.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/categories/Linux/</loc>
         <lastmod>2021-03-07T16:32:27.514Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -72,13 +79,6 @@
 
     <url>
         <loc>https://sogrey.github.io/categories/%25E6%2589%258B%25E8%25AE%25B0/</loc>
-        <lastmod>2020-12-21T15:42:58.225Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/categories/HEXO%25E5%258D%259A%25E5%25AE%25A2/</loc>
         <lastmod>2020-12-21T15:42:58.225Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>

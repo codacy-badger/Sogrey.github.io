@@ -8,6 +8,14 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/</loc>
+        <lastmod>2021-03-14T12:48:13.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</loc>
         <lastmod>2021-03-07T16:32:27.514Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -473,14 +481,6 @@
 
     <url>
         <loc>https://sogrey.github.io/article/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</loc>
-        <lastmod>2020-12-21T15:42:58.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/</loc>
         <lastmod>2020-12-21T15:42:58.209Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
