@@ -8,6 +8,13 @@
     </url>
 
     <url>
+        <loc>https://sogrey.github.io/categories/Github/</loc>
+        <lastmod>2021-03-16T16:17:15.222Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/categories/HEXO%25E5%258D%259A%25E5%25AE%25A2/</loc>
         <lastmod>2021-03-14T12:48:13.653Z</lastmod>
         <changefreq>weekly</changefreq>

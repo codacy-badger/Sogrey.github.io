@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>提高国内访问GitHub的速度</title>
+      <link href="/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/"/>
+      <url>/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>因为某些原因，github访问速度确实太慢,于是就出现了很多提高github访问速度的方案。在此记录几种。</p><h2 id="GitHub-镜像访问"><a href="#GitHub-镜像访问" class="headerlink" title="GitHub 镜像访问"></a>GitHub 镜像访问</h2><p>这里提供两个最常用的镜像地址：</p><ul><li><a href="https://github.com.cnpmjs.org">https://github.com.cnpmjs.org</a></li><li><a href="https://hub.fastgit.org">https://hub.fastgit.org</a></li></ul><p>也就是说上面的镜像就是一个克隆版的 GitHub，你可以访问上面的镜像网站，网站的内容跟 GitHub 是完整同步的镜像，然后在这个网站里面进行下载克隆等操作。</p><blockquote><p>不要在克隆站上登录你的github账号</p></blockquote><h2 id="GitHub-文件加速"><a href="#GitHub-文件加速" class="headerlink" title="GitHub 文件加速"></a>GitHub 文件加速</h2><p>利用 Cloudflare Workers 对 github release 、archive 以及项目文件进行加速，部署无需服务器且自带CDN.</p><ul><li><a href="https://gh.api.99988866.xyz">https://gh.api.99988866.xyz</a></li><li><a href="https://g.ioiox.com">https://g.ioiox.com</a></li></ul><p>以上网站为演示站点，如无法打开可以查看开源项目：<a href="https://hunsh.net/archives/23/">gh-proxy-GitHub</a> 文件加速自行部署。</p><h2 id="Github-加速下载"><a href="#Github-加速下载" class="headerlink" title="Github 加速下载"></a>Github 加速下载</h2><p>只需要复制当前 GitHub 地址粘贴到输入框中就可以代理加速下载！</p><p>地址：<a href="http://toolwa.com/github/">http://toolwa.com/github/</a></p><h2 id="加速你的-Github"><a href="#加速你的-Github" class="headerlink" title="加速你的 Github"></a>加速你的 Github</h2><p><a href="https://github.zhlh6.cn">https://github.zhlh6.cn</a></p><p>输入 Github 仓库地址，使用生成的地址进行 git ssh 等操作</p><h2 id="GitHub-raw-加速"><a href="#GitHub-raw-加速" class="headerlink" title="GitHub raw 加速"></a>GitHub raw 加速</h2><p>GitHub raw 域名并非 <code>github.com</code> 而是 <code>raw.githubusercontent.com</code>，上方的 GitHub 加速如果不能加速这个域名，那么可以使用 Static CDN 提供的反代服务。</p><p>将 <code>raw.githubusercontent.com</code> 替换为 <code>raw.staticdn.net</code> 即可加速。</p><h2 id="GitHub-Jsdelivr"><a href="#GitHub-Jsdelivr" class="headerlink" title="GitHub + Jsdelivr"></a>GitHub + Jsdelivr</h2><p>jsdelivr 唯一美中不足的就是它不能获取 exe 文件以及 Release 处附加的 exe 和 dmg 文件。</p><p>也就是说如果 exe 文件是附加在 Release 处但是没有在 code 里面的话是无法获取的。所以只能当作静态文件 cdn 用途，而不能作为 Release 加速下载的用途。</p><h2 id="通过-Gitee-中转-fork-仓库下载"><a href="#通过-Gitee-中转-fork-仓库下载" class="headerlink" title="通过 Gitee 中转 fork 仓库下载"></a>通过 Gitee 中转 fork 仓库下载</h2><p>网上有很多相关的教程，就是将github的仓库克隆同步到gitee上</p><h2 id="通过修改-HOSTS-文件进行加速"><a href="#通过修改-HOSTS-文件进行加速" class="headerlink" title="通过修改 HOSTS 文件进行加速"></a>通过修改 HOSTS 文件进行加速</h2><p>手动把cdn和ip地址绑定。</p><ul><li>获取 github 的 <code>global.ssl.fastly</code> 地址访问：<a href="http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo">http://github.global.ssl.fastly.net.ipaddress.com/#ipinfo</a> 获取cdn和ip域名：</li></ul><p>得到：199.232.69.194 <a href="https://github.global.ssl.fastly.net">https://github.global.ssl.fastly.net</a></p><ul><li>获取github.com地址</li></ul><p>访问：<a href="https://github.com.ipaddress.com/#ipinfo">https://github.com.ipaddress.com/#ipinfo</a> 获取cdn和ip：</p><p>得到：140.82.114.4 <a href="http://github.com">http://github.com</a></p><ul><li>修改 host 文件映射上面查找到的 IP</li></ul><p>windows系统：</p><ul><li>修改C:WindowsSystem32driversetchosts文件的权限，指定可写入：右击-&gt;hosts-&gt;属性-&gt;安全-&gt;编辑-&gt;点击Users-&gt;在Users的权限“写入”后面打勾。然后点击确定。</li><li>右击-&gt;hosts-&gt;打开方式-&gt;选定记事本（或者你喜欢的编辑器）-&gt;在末尾处添加以下内容：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">199.232.69.194 github.global.ssl.fastly.net</span><br><span class="line">140.82.114.4 github.com</span><br></pre></td></tr></table></figure></li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li><a href="https://mp.weixin.qq.com/s/xc7wvTDcM4kTS_qILIlg2w">提高国内访问 GitHub 的速度的 9 种方案</a></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Github </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Linux中让shell脚本变成可执行文件</title>
       <link href="/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/"/>
       <url>/article/Linux%E4%B8%AD%E8%AE%A9shell%E8%84%9A%E6%9C%AC%E5%8F%98%E6%88%90%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6/</url>
