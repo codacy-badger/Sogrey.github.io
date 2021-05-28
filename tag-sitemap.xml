@@ -3,6 +3,27 @@
 
 
     <url>
+        <loc>https://sogrey.github.io/tags/sudoers/</loc>
+        <lastmod>2021-05-28T13:43:34.929Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/sudo/</loc>
+        <lastmod>2021-05-28T13:43:34.929Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://sogrey.github.io/tags/Linux/</loc>
+        <lastmod>2021-05-28T13:43:34.929Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://sogrey.github.io/tags/VirtualBox/</loc>
         <lastmod>2021-05-23T16:31:30.194Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -74,13 +95,6 @@
 
     <url>
         <loc>https://sogrey.github.io/tags/shell/</loc>
-        <lastmod>2021-03-07T16:32:27.514Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/Linux/</loc>
         <lastmod>2021-03-07T16:32:27.514Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -348,20 +362,6 @@
     <url>
         <loc>https://sogrey.github.io/tags/JavaScript/</loc>
         <lastmod>2020-12-21T15:42:58.220Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/sudoers/</loc>
-        <lastmod>2020-12-21T15:42:58.219Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://sogrey.github.io/tags/sudo/</loc>
-        <lastmod>2020-12-21T15:42:58.219Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
