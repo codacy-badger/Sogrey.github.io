@@ -8,13 +8,6 @@
     </url>
     
     <url>
-        <loc>https://sogrey.github.io/playlist/</loc>
-        <lastmod>2021-08-19T15:04:05.562Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
         <loc>https://sogrey.github.io/tags/</loc>
         <lastmod>2020-12-21T15:42:58.448Z</lastmod>
         <changefreq>weekly</changefreq>
