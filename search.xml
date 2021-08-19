@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search> 
   
+  
+    
+    <entry>
+      <title>Linux安装与卸载JDK</title>
+      <link href="/article/Linux%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJDK/"/>
+      <url>/article/Linux%E5%AE%89%E8%A3%85%E4%B8%8E%E5%8D%B8%E8%BD%BDJDK/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Linux上安装JDK,动手记录不迷路。</p><span id="more"></span><h2 id="安装JDK"><a href="#安装JDK" class="headerlink" title="安装JDK"></a>安装JDK</h2><h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>网络畅通时可选择在线安装，简单方便。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install default-jre</span><br><span class="line">sudo apt-get install default-jdk</span><br></pre></td></tr></table></figure><p>以上是默认的安装版本。如果想安装特定的版本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openjdk-7-jre</span><br><span class="line">sudo apt-get install openjdk-7-jdk</span><br></pre></td></tr></table></figure></p><p>离线安装。</p><p>下载jdk压缩包， 创建一个目录来存放jdk,并解压tar ：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/lib/jvm</span><br><span class="line">sudo tar -zxvf jdk-8u181-linux-x64.tar.gz -C /usr/lib/jvm</span><br></pre></td></tr></table></figure><p>解压后可删除压缩包：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf jdk-7u79-linux-x64.tar.gz</span><br></pre></td></tr></table></figure><br>修改环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim ~/.bashrc</span><br></pre></td></tr></table></figure><br>文件末尾追加如下内容<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#set oracle jdk environment</span></span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/lib/jvm/jdk1.8.0_181  <span class="comment">## 这里要注意目录要换成自己解压的jdk 目录</span></span><br><span class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre  </span><br><span class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$&#123;JAVA_HOME&#125;</span>/lib:<span class="variable">$&#123;JRE_HOME&#125;</span>/lib  </span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$&#123;JAVA_HOME&#125;</span>/bin:<span class="variable">$PATH</span>  </span><br></pre></td></tr></table></figure><br>使环境变量生效<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure><br>设置默认jdk<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_181/bin/java 300  </span><br><span class="line">sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_181/bin/javac 300  </span><br><span class="line">sudo update-alternatives --install /usr/bin/jar jar /usr/lib/jvm/jdk1.8.0_181/bin/jar 300   </span><br><span class="line">sudo update-alternatives --install /usr/bin/javah javah /usr/lib/jvm/jdk1.8.0_181/bin/javah 300   </span><br><span class="line">sudo update-alternatives --install /usr/bin/javap javap /usr/lib/jvm/jdk1.8.0_181/bin/javap 300 </span><br></pre></td></tr></table></figure><br>执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config java</span><br></pre></td></tr></table></figure><br>测试是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br><span class="line">javac -version</span><br></pre></td></tr></table></figure></p><h2 id="卸载JDK"><a href="#卸载JDK" class="headerlink" title="卸载JDK"></a>卸载JDK</h2><h3 id="Ubuntu-1"><a href="#Ubuntu-1" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><p>要删除 OpenJDK (如果已安装的话)。首先，检查是安装的哪个 OpenJDK包。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dpkg --list | grep -i jdk</span></span><br></pre></td></tr></table></figure><p>移除 openjdk包:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get purge openjdk*</span></span><br></pre></td></tr></table></figure><p>卸载 OpenJDK 相关包：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># apt-get purge icedtea-* openjdk-*</span></span><br></pre></td></tr></table></figure><p>检查所有 OpenJDK包是否都已卸载完毕：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dpkg --list | grep -i jdk</span></span><br></pre></td></tr></table></figure><p>完毕。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+            <tag> JDK </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
     
     <entry>
       <title>Oracle VM VirtualBox 中为 CentOS 安装增强工具</title>
@@ -27,6 +55,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Redis踩坑记</title>
       <link href="/article/Redis%E8%B8%A9%E5%9D%91%E8%AE%B0/"/>
@@ -51,6 +81,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Mysql踩坑记</title>
@@ -77,6 +109,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>提高国内访问GitHub的速度</title>
       <link href="/article/%E6%8F%90%E9%AB%98%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AEGitHub%E7%9A%84%E9%80%9F%E5%BA%A6/"/>
@@ -99,6 +133,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Linux中让shell脚本变成可执行文件</title>
@@ -124,6 +160,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>CentOS安装.netcore</title>
@@ -152,6 +190,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Promise.all和Promise.allSettled的区别</title>
       <link href="/article/Promise-all%E5%92%8CPromise-allSettled%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
@@ -177,6 +217,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>AutoCAD_ID、指针、句柄和ads_name的区别</title>
       <link href="/article/AutoCAD_ID__Handle__ads_name/"/>
@@ -200,6 +242,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>致敬2020，重启2021</title>
       <link href="/article/2020-2021/"/>
@@ -222,6 +266,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>java调用shell脚本</title>
@@ -248,6 +294,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Spring Boot 项目瘦身</title>
       <link href="/article/SpringBoot%E9%A1%B9%E7%9B%AE%E7%98%A6%E8%BA%AB/"/>
@@ -272,6 +320,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Springboot跨域请求</title>
@@ -298,6 +348,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>SpringBoot支持HTTPS</title>
       <link href="/article/SpringBoot%E6%94%AF%E6%8C%81HTTPS/"/>
@@ -322,6 +374,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>SpringBoot实现定时任务</title>
@@ -350,6 +404,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>SpringBoot注解简介</title>
       <link href="/article/SpringBoot%E6%B3%A8%E8%A7%A3%E7%AE%80%E4%BB%8B/"/>
@@ -375,6 +431,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Linux下如何创建文件</title>
       <link href="/article/Linux%E4%B8%8B%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6/"/>
@@ -397,6 +455,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>【Linux】提示用户不在sudoers文件中的解决方法</title>
@@ -425,6 +485,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Linux下安装软件</title>
       <link href="/article/Linux%E4%B8%8B%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6/"/>
@@ -451,6 +513,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>spring-boot项目打包和自启动</title>
@@ -483,6 +547,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>使用Maven搭建spring boot项目（下）</title>
       <link href="/article/%E4%BD%BF%E7%94%A8Maven%E6%90%AD%E5%BB%BAspring-boot%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
@@ -511,6 +577,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>使用Maven搭建spring boot项目</title>
@@ -541,6 +609,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>解锁github高级搜索技能</title>
       <link href="/article/%E8%A7%A3%E9%94%81github%E9%AB%98%E7%BA%A7%E6%90%9C%E7%B4%A2%E6%8A%80%E8%83%BD/"/>
@@ -563,6 +633,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>如何完全卸载AutoCAD</title>
@@ -589,6 +661,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>专为编程而生的字体 —— Fira Code</title>
       <link href="/article/%E4%B8%93%E4%B8%BA%E7%BC%96%E7%A8%8B%E8%80%8C%E7%94%9F%E7%9A%84%E5%AD%97%E4%BD%93/"/>
@@ -611,6 +685,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Js之Promise</title>
@@ -639,6 +715,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>总结2019，展望2020</title>
       <link href="/article/zj2019-zw2020/"/>
@@ -661,6 +739,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>使用hugo搭建个人博客</title>
@@ -685,6 +765,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Android Studio开发组件化App遇到的问题</title>
       <link href="/article/Android-Studio%E5%BC%80%E5%8F%91%E7%BB%84%E4%BB%B6%E5%8C%96App%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
@@ -707,6 +789,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>git clone 解决Permission Denied (publickey)问题</title>
@@ -731,6 +815,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>node.js调试</title>
       <link href="/article/node-js%E8%B0%83%E8%AF%95/"/>
@@ -753,6 +839,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>端口被占用，干掉它</title>
@@ -777,6 +865,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>JS中apply()与call()的区别</title>
       <link href="/article/JS%E4%B8%ADapply-%E4%B8%8Ecall-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
@@ -800,6 +890,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>前端调试之把玩console</title>
       <link href="/article/%E5%89%8D%E7%AB%AF%E8%B0%83%E8%AF%95%E4%B9%8B%E6%8A%8A%E7%8E%A9console/"/>
@@ -822,6 +914,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>下载神器 you-get</title>
@@ -848,6 +942,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>[诗歌]千古岐山</title>
       <link href="/article/%E2%80%9C-%E8%AF%97%E6%AD%8C-%E5%8D%83%E5%8F%A4%E5%B2%90%E5%B1%B1/"/>
@@ -870,6 +966,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>使用 npm 安装 gitbook</title>
@@ -898,6 +996,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>再见2018，你好2019</title>
       <link href="/article/%E5%86%8D%E8%A7%812018%EF%BC%8C%E4%BD%A0%E5%A5%BD2019/"/>
@@ -921,6 +1021,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>一张图弄懂开源协议-GPL、BSD、MIT、Mozilla、Apache和LGPL 之间的差别</title>
       <link href="/article/%E4%B8%80%E5%BC%A0%E5%9B%BE%E5%BC%84%E6%87%82%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE-GPL%E3%80%81BSD%E3%80%81MIT%E3%80%81Mozilla%E3%80%81Apache%E5%92%8CLGPL-%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%88%AB/"/>
@@ -943,6 +1045,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Activity启动模式(lauchMode)</title>
@@ -969,6 +1073,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Java对象转json时空值(null)处理</title>
       <link href="/article/Java%E5%AF%B9%E8%B1%A1%E8%BD%ACjson%E6%97%B6%E7%A9%BA%E5%80%BC-null-%E5%A4%84%E7%90%86/"/>
@@ -994,6 +1100,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Android版本和API Level对应关系</title>
       <link href="/article/Android%E7%89%88%E6%9C%AC%E5%92%8CAPI-Level%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB/"/>
@@ -1016,6 +1124,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Flutter 路由跳转</title>
@@ -1041,6 +1151,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Android 动态调用外部jar/dex</title>
@@ -1069,6 +1181,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>JNI Md5加密生成so文件</title>
       <link href="/article/JNI%20Md5%E5%8A%A0%E5%AF%86%E7%94%9F%E6%88%90so%E6%96%87%E4%BB%B6/"/>
@@ -1093,6 +1207,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>pe装机，开机设置启动项快捷键</title>
@@ -1121,6 +1237,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>VS code 插件</title>
       <link href="/article/VS-code-%E6%8F%92%E4%BB%B6/"/>
@@ -1143,6 +1261,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>遍历Map的四种方法</title>
@@ -1169,6 +1289,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>15种CSS居中方式</title>
       <link href="/article/15%E7%A7%8DCSS%E5%B1%85%E4%B8%AD%E6%96%B9%E5%BC%8F/"/>
@@ -1193,6 +1315,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>利用百度URL API实现地址与经纬度互相转换</title>
@@ -1219,6 +1343,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Android获取view宽高的三种方式</title>
       <link href="/article/Android%E8%8E%B7%E5%8F%96view%E5%AE%BD%E9%AB%98%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
@@ -1241,6 +1367,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Android中TextView属性ellipsize=marquee不生效的解决办法</title>
@@ -1266,6 +1394,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>关于Android程序使用KSoap2调用Webservice运行不成功的问题</title>
@@ -1294,6 +1424,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Hexo 添加 Gitment 评论</title>
       <link href="/article/Hexo-%E6%B7%BB%E5%8A%A0-Gitment-%E8%AF%84%E8%AE%BA/"/>
@@ -1321,6 +1453,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Android Webview 内容自适应高度</title>
       <link href="/article/Android-Webview-%E5%86%85%E5%AE%B9%E8%87%AA%E9%80%82%E5%BA%94%E9%AB%98%E5%BA%A6/"/>
@@ -1346,6 +1480,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>java实现定时任务的三种方法(收集)</title>
       <link href="/article/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
@@ -1369,6 +1505,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Java读取文件夹大小的6种方法（收集）</title>
       <link href="/article/Java%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E5%A4%A7%E5%B0%8F%E7%9A%846%E7%A7%8D%E6%96%B9%E6%B3%95%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/"/>
@@ -1391,6 +1529,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>json转树状结构（收集）</title>
@@ -1417,6 +1557,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>一行  JavaScript 代码（收集）</title>
       <link href="/article/%E4%B8%80%E8%A1%8C%20%20JavaScript%20%E4%BB%A3%E7%A0%81%EF%BC%88%E6%94%B6%E9%9B%86%EF%BC%89/"/>
@@ -1439,6 +1581,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Hexo建站过程中遇到的问题（填坑篇）</title>
@@ -1464,6 +1608,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Android library 发布到 JCenter</title>
@@ -1492,6 +1638,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>正则表达式匹配汇集</title>
       <link href="/article/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%8C%B9%E9%85%8D%E6%B1%87%E9%9B%86/"/>
@@ -1516,6 +1664,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>技术文章之Html（CSS，JS）</title>
@@ -1546,6 +1696,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>技术文章之Android</title>
       <link href="/article/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0%E4%B9%8BAndroid/"/>
@@ -1570,6 +1722,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>web app相关整理</title>
@@ -1598,6 +1752,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>微信小程序初印象【整理】</title>
       <link href="/article/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%8D%B0%E8%B1%A1%E3%80%90%E6%95%B4%E7%90%86%E3%80%91/"/>
@@ -1625,6 +1781,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Webp的探究之路</title>
       <link href="/article/Webp%E7%9A%84%E6%8E%A2%E7%A9%B6%E4%B9%8B%E8%B7%AF/"/>
@@ -1647,6 +1805,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>android中使用icon fonts字体图标</title>
@@ -1672,6 +1832,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Android混淆签名(上)</title>
@@ -1700,6 +1862,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Android混淆签名(下)</title>
       <link href="/article/Android%E6%B7%B7%E6%B7%86%E7%AD%BE%E5%90%8D%EF%BC%88%E4%B8%8B%EF%BC%89/"/>
@@ -1727,6 +1891,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>我收集的一些开源项目</title>
       <link href="/article/%E6%88%91%E6%94%B6%E9%9B%86%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/"/>
@@ -1752,6 +1918,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Git常用命令</title>
       <link href="/article/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
@@ -1774,6 +1942,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>Hexo博客基于主题Yelee(yelog) 添加文章分类</title>
@@ -1804,6 +1974,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Hexo博客基于主题Yelee(yelog) 添加“标签云”和“关于我”菜单项页面</title>
       <link href="/article/Hexo%E5%8D%9A%E5%AE%A2%E5%9F%BA%E4%BA%8E%E4%B8%BB%E9%A2%98Yelee-yelog-%E6%B7%BB%E5%8A%A0%E2%80%9C%E6%A0%87%E7%AD%BE%E4%BA%91%E2%80%9D%E5%92%8C%E2%80%9C%E5%85%B3%E4%BA%8E%E6%88%91%E2%80%9D%E8%8F%9C%E5%8D%95%E9%A1%B9%E9%A1%B5%E9%9D%A2/"/>
@@ -1833,6 +2005,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Html5 PPT</title>
       <link href="/article/Html5-PPT/"/>
@@ -1857,6 +2031,8 @@
         </tags>
       
     </entry>
+    
+    
     
     <entry>
       <title>如何在Github Pages搭建个人独立主页？</title>
@@ -1883,6 +2059,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>我是如何用hexo搭建github pages</title>
       <link href="/article/%E6%88%91%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%A8hexo%E6%90%AD%E5%BB%BAgithub-pages/"/>
@@ -1908,6 +2086,8 @@
       
     </entry>
     
+    
+    
     <entry>
       <title>Hello World</title>
       <link href="/article/hello-world/"/>
@@ -1918,6 +2098,7 @@
       
       
     </entry>
+    
     
   
   
